@@ -9,11 +9,22 @@
     <lastBuildDate>Fri, 04 Nov 2022 15:11:23 +0800</lastBuildDate><atom:link href="https://www.flysnow.org/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My First Post</title>
+      <link>https://www.flysnow.org/posts/my-first-post-copy/</link>
+      <pubDate>Fri, 04 Nov 2022 15:11:23 +0800</pubDate>
+      
+      <guid>https://www.flysnow.org/posts/my-first-post-copy/</guid>
+      <description>gekko </description>
+    </item>
+    
+    <item>
+      <title>My First Post</title>
       <link>https://www.flysnow.org/posts/my-first-post/</link>
       <pubDate>Fri, 04 Nov 2022 15:11:23 +0800</pubDate>
       
       <guid>https://www.flysnow.org/posts/my-first-post/</guid>
-      <description>gekko </description>
+      <description>[TOC]
+gekko 1123123123
+123342134234234 </description>
     </item>
     
   </channel>
