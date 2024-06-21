@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>QpsLimitExceeded</Code>
+  <Message>Please reduce your request rate.</Message>
+  <RequestId>650DC5DCB921E539336EC776</RequestId>
+  <HostId>geekbang-time-resource.oss-cn-beijing.aliyuncs.com</HostId>
+</Error>
