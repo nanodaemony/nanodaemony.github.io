@@ -17,11 +17,11 @@ hero:
       link: /about
 
 features:
-  - icon: 📚
-    title: 书籍
-    details: 阅读笔记与知识整理
-    link: /NanoBook/
-    linkText: 浏览书籍
+  - icon: 💻
+    title: 技术
+    details: 技术知识、工作总结、学习笔记
+    link: /NanoMind/
+    linkText: 浏览技术
   - icon: 🗂️
     title: 项目
     details: 项目文档与功能格子说明
@@ -32,11 +32,11 @@ features:
     details: 生活记录、读书笔记、影音感想
     link: /NanoLife/
     linkText: 浏览生活
-  - icon: 💻
-    title: 技术
-    details: 技术知识、工作总结、学习笔记
-    link: /NanoMind/
-    linkText: 浏览技术
+  - icon: 📚
+    title: 书籍
+    details: 阅读笔记与知识整理
+    link: /NanoBook/
+    linkText: 浏览书籍
 ---
 
 <style>

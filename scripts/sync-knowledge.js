@@ -15,10 +15,10 @@ const KNOWLEDGE_BASE_ROOT = 'E:/KnowledgeOcean'
 
 // 知识库配置
 const KNOWLEDGE_BASES = [
-  { name: 'NanoBook', title: '书籍', description: '书籍阅读笔记与知识整理' },
+  { name: 'NanoMind', title: '技术', description: '技术知识、工作总结、学习笔记' },
   { name: 'NanoGrid', title: '项目', description: '项目文档与功能格子说明' },
   { name: 'NanoLife', title: '生活', description: '生活记录、读书笔记、影音感想' },
-  { name: 'NanoMind', title: '技术', description: '技术知识、工作总结、学习笔记' },
+  { name: 'NanoBook', title: '书籍', description: '书籍阅读笔记与知识整理' },
 ]
 
 // 跳过的目录
