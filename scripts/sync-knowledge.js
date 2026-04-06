@@ -23,6 +23,8 @@ const KNOWLEDGE_BASES = [
 
 // 跳过的目录
 const SKIP_DIRS = ['.obsidian', '.claude', 'node_modules', '.git']
+// 跳过的文件
+const SKIP_FILES = ['decoded_excalidraw.json']
 
 console.log('🚀 开始同步知识库...')
 console.log(`源目录: ${KNOWLEDGE_BASE_ROOT}`)
@@ -68,6 +70,10 @@ function copyDir(src, dest) {
     if (entry.isDirectory()) {
       copyDir(srcPath, destPath)
     } else {
+      // 跳过指定文件
+      if (SKIP_FILES.includes(entry.name)) {
+        continue
+      }
       cpSync(srcPath, destPath, { force: true })
     }
   }

@@ -5,10 +5,12 @@ import MarkdownPreview from 'vite-plugin-markdown-preview'
 import { head, nav, sidebar } from './configs'
 
 const APP_BASE_PATH = basename(process.env.GITHUB_REPOSITORY || '')
+// 用户名仓库（username.github.io）的 base 是 '/'，其他仓库是 '/repo-name/'
+const base = APP_BASE_PATH && !APP_BASE_PATH.endsWith('.github.io') ? `/${APP_BASE_PATH}/` : '/'
 
 export default defineConfig({
   outDir: '../dist',
-  base: APP_BASE_PATH ? `/${APP_BASE_PATH}/` : '/',
+  base,
 
   lang: 'zh-CN',
   title: '达尔文的猹',
