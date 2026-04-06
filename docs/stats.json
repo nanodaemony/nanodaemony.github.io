@@ -1,0 +1,30 @@
+{
+  "lastUpdated": "2026-04-06",
+  "totalDocs": 75,
+  "bases": [
+    {
+      "name": "NanoBook",
+      "title": "书籍",
+      "description": "书籍阅读笔记与知识整理",
+      "docCount": 0
+    },
+    {
+      "name": "NanoGrid",
+      "title": "项目",
+      "description": "项目文档与功能格子说明",
+      "docCount": 38
+    },
+    {
+      "name": "NanoLife",
+      "title": "生活",
+      "description": "生活记录、读书笔记、影音感想",
+      "docCount": 25
+    },
+    {
+      "name": "NanoMind",
+      "title": "技术",
+      "description": "技术知识、工作总结、学习笔记",
+      "docCount": 12
+    }
+  ]
+}
