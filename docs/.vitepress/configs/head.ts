@@ -8,4 +8,8 @@ export const head: HeadConfig[] = [
   ['link', { rel: 'mask-icon', href: '/favicon.ico', color: '#3eaf7c' }],
   ['meta', { name: 'msapplication-TileImage', content: '/favicon.ico' }],
   ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
+  // JetBrains Mono 字体
+  ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+  ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+  ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap' }],
 ]
