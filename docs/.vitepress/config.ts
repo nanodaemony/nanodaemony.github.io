@@ -41,10 +41,10 @@ export default defineConfig({
       label: '目录',
     },
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/nano' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/nanodaemony' }],
 
     footer: {
-      message: '知识在于积累',
+      message: '大道至简，悟在天成',
       copyright: 'Copyright © 2026 达尔文的猹',
     },
 

@@ -106,6 +106,19 @@ function naturalSort(a, b) {
 }
 
 /**
+ * 去掉文件名前缀（用于显示）
+ * 支持: A-, B-, 1-, 2-, 10-, 1., 2., 10. 等格式
+ */
+function removePrefix(name) {
+  // 去掉 .md 后缀
+  let text = name.replace('.md', '')
+  // 去掉前缀：字母- 或 数字- 或 数字.
+  text = text.replace(/^[A-Za-z]-/, '')
+  text = text.replace(/^\d+[-.]/, '')
+  return text
+}
+
+/**
  * 生成单个目录的侧边栏 items
  */
 function generateSidebarItems(dirPath, basePath, level = 1) {
@@ -122,16 +135,17 @@ function generateSidebarItems(dirPath, basePath, level = 1) {
     if (entry.isDirectory()) {
       const subItems = generateSidebarItems(fullPath, linkPath, level + 1)
       if (subItems.length > 0) {
+        // 一级文件夹不加 Emoji，二级及以下加 📁
+        const folderEmoji = level === 1 ? '' : '📁 '
         items.push({
-          text: entry.name,
+          text: folderEmoji + removePrefix(entry.name),
           collapsed: level > 1,
           items: subItems,
         })
       }
     } else if (entry.name.endsWith('.md')) {
-      const text = entry.name.replace('.md', '')
       items.push({
-        text,
+        text: '📄 ' + removePrefix(entry.name),
         link: linkPath.replace('.md', ''),
       })
     }

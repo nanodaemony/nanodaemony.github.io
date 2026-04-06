@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: 达尔文的猹
-  text: 个人知识库
-  tagline: 知识在于积累，成长在于思考
+  text: 大道至简
+  tagline: 🚀🚀🚀🚀🚀
   image:
     src: /logo.png
     alt: Logo
@@ -24,7 +24,7 @@ features:
     linkText: 浏览技术
   - icon: 🗂️
     title: 项目
-    details: 项目文档与功能格子说明
+    details: 项目文档与思路
     link: /NanoGrid/
     linkText: 浏览项目
   - icon: 🏠
