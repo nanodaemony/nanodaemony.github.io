@@ -181,6 +181,33 @@ table {
   line-height: 28px;
 }
 
+/* 标题颜色 */
+.vp-doc h1 {
+  color: #dd2c38;
+}
+.vp-doc h2 {
+  color: #de7417;
+}
+.vp-doc h3 {
+  color: #c09c0c;
+}
+.vp-doc h4 {
+  color: #1da51d;
+}
+
+.dark .vp-doc h1 {
+  color: #ff7881;
+}
+.dark .vp-doc h2 {
+  color: #fbbb83;
+}
+.dark .vp-doc h3 {
+  color: #ffe88b;
+}
+.dark .vp-doc h4 {
+  color: #7cd37c;
+}
+
 /**
  * VitePress: Custom fix
  * -------------------------------------------------------------------------- */
