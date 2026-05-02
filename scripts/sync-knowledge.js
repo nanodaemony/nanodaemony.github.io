@@ -4,25 +4,55 @@
  * 将 E:\KnowledgeOcean 下的知识库同步到 VitePress docs 目录
  */
 
-import { existsSync, mkdirSync, rmSync, readdirSync, cpSync, writeFileSync } from 'node:fs'
-import { resolve, dirname, join } from 'node:path'
+import {
+  existsSync,
+  mkdirSync,
+  rmSync,
+  readdirSync,
+  cpSync,
+  writeFileSync,
+  readFileSync,
+} from 'node:fs'
+import { resolve, dirname, join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT_DIR = resolve(__dirname, '..')
 const DOCS_DIR = resolve(ROOT_DIR, 'docs')
-const KNOWLEDGE_BASE_ROOT = 'E:/KnowledgeOcean'
+const PUBLIC_DIR = resolve(DOCS_DIR, 'public')
+// 知识库根目录：当前项目往上两级就是 KnowledgeOcean
+const KNOWLEDGE_BASE_ROOT = resolve(ROOT_DIR, '..')
 
-// 知识库配置
+// 知识库配置：sourceFolder 是实际的文件夹名，name 是 docs 下的目标文件夹名
 const KNOWLEDGE_BASES = [
-  { name: 'NanoMind', title: '技术', description: '技术知识、工作总结、学习笔记' },
-  { name: 'NanoGrid', title: '项目', description: '项目文档与功能格子说明' },
-  { name: 'NanoLife', title: '生活', description: '生活记录、读书笔记、影音感想' },
-  { name: 'NanoBook', title: '书籍', description: '书籍阅读笔记与知识整理' },
+  {
+    sourceFolder: 'nano-mind',
+    name: 'NanoMind',
+    title: '技术',
+    description: '技术知识、工作总结、学习笔记',
+  },
+  {
+    sourceFolder: 'nano-grid',
+    name: 'NanoGrid',
+    title: '项目',
+    description: '项目文档与功能格子说明',
+  },
+  {
+    sourceFolder: 'nano-life',
+    name: 'NanoLife',
+    title: '生活',
+    description: '生活记录、读书笔记、影音感想',
+  },
+  {
+    sourceFolder: 'nano-book',
+    name: 'NanoBook',
+    title: '书籍',
+    description: '书籍阅读笔记与知识整理',
+  },
 ]
 
 // 跳过的目录
-const SKIP_DIRS = ['.obsidian', '.claude', 'node_modules', '.git']
+const SKIP_DIRS = ['.obsidian', '.claude', 'node_modules', '.git', 'zimg']
 // 跳过的文件
 const SKIP_FILES = ['decoded_excalidraw.json']
 
@@ -49,6 +79,73 @@ function cleanAllTargetDirs() {
   for (const base of KNOWLEDGE_BASES) {
     cleanTargetDir(base.name)
   }
+}
+
+// 用于存储所有找到的图片路径
+const allImages = new Map()
+
+/**
+ * 收集所有 zimg 目录下的图片
+ */
+function collectImages(srcDir, baseName) {
+  const entries = readdirSync(srcDir, { withFileTypes: true })
+
+  for (const entry of entries) {
+    const fullPath = join(srcDir, entry.name)
+
+    if (entry.isDirectory()) {
+      if (entry.name === 'zimg') {
+        // 找到 zimg 目录，收集里面的图片
+        const images = readdirSync(fullPath, { withFileTypes: true })
+        for (const img of images) {
+          if (!img.isDirectory()) {
+            const imgName = img.name
+            if (!allImages.has(imgName)) {
+              allImages.set(imgName, join(fullPath, imgName))
+            }
+          }
+        }
+      } else if (!SKIP_DIRS.includes(entry.name)) {
+        collectImages(fullPath, baseName)
+      }
+    }
+  }
+}
+
+/**
+ * 复制所有收集到的图片到 public 目录
+ */
+function copyImagesToPublic() {
+  const publicZimg = join(PUBLIC_DIR, 'zimg')
+  mkdirSync(publicZimg, { recursive: true })
+
+  let count = 0
+  for (const [imgName, srcPath] of allImages) {
+    const destPath = join(publicZimg, imgName)
+    cpSync(srcPath, destPath, { force: true })
+    count++
+  }
+  console.log(`  📷 复制了 ${count} 张图片到 public/zimg/`)
+}
+
+/**
+ * 转换 Obsidian wiki 链接为标准 Markdown 图片链接（使用 public 目录）
+ * ![[image.png]] → ![](/zimg/image.png)
+ */
+function convertWikiLinks(content) {
+  // 匹配 ![[image.png]] 格式的图片链接
+  const wikiImageRegex = /!\[\[([^\]]+\.(?:png|jpg|jpeg|gif|svg|webp))\]\]/gi
+  let result = content
+
+  result = result.replace(wikiImageRegex, (match, imageName) => {
+    if (allImages.has(imageName)) {
+      return `![](/zimg/${imageName})`
+    }
+    // 找不到图片，保持原样
+    return match
+  })
+
+  return result
 }
 
 /**
@@ -80,20 +177,73 @@ function copyDir(src, dest) {
 }
 
 /**
+ * 递归转换目录中所有 Markdown 文件的 wiki 链接
+ */
+function convertAllMarkdownFiles(dir) {
+  const entries = readdirSync(dir, { withFileTypes: true })
+
+  for (const entry of entries) {
+    const fullPath = join(dir, entry.name)
+
+    if (entry.isDirectory()) {
+      if (!SKIP_DIRS.includes(entry.name) && entry.name !== 'zimg') {
+        convertAllMarkdownFiles(fullPath)
+      }
+    } else if (entry.name.endsWith('.md')) {
+      const content = readFileSync(fullPath, 'utf-8')
+      const convertedContent = convertWikiLinks(content)
+      if (content !== convertedContent) {
+        writeFileSync(fullPath, convertedContent, 'utf-8')
+      }
+    }
+  }
+}
+
+/**
  * 复制所有知识库
  */
 function copyAllKnowledgeBases() {
   console.log('\n📦 Step 2: 复制知识库内容')
   for (const base of KNOWLEDGE_BASES) {
-    const srcDir = resolve(KNOWLEDGE_BASE_ROOT, base.name)
+    const srcDir = resolve(KNOWLEDGE_BASE_ROOT, base.sourceFolder)
     const destDir = resolve(DOCS_DIR, base.name)
 
     if (existsSync(srcDir)) {
-      console.log(`  📁 复制: ${base.name} (${srcDir} → ${destDir})`)
+      console.log(`  📁 复制: ${base.sourceFolder} → ${base.name} (${srcDir} → ${destDir})`)
       copyDir(srcDir, destDir)
     } else {
       console.log(`  ⚠️ 源目录不存在: ${srcDir}`)
       mkdirSync(destDir, { recursive: true })
+    }
+  }
+}
+
+/**
+ * 收集所有知识库中的图片
+ */
+function collectAllImages() {
+  console.log('\n📦 Step 2.3: 收集所有图片')
+  allImages.clear()
+
+  for (const base of KNOWLEDGE_BASES) {
+    const srcDir = resolve(KNOWLEDGE_BASE_ROOT, base.sourceFolder)
+    if (existsSync(srcDir)) {
+      collectImages(srcDir, base.name)
+    }
+  }
+  console.log(`  📸 共找到 ${allImages.size} 张图片`)
+}
+
+/**
+ * 转换所有知识库中的 Markdown 文件
+ */
+function convertAllKnowledgeBasesMarkdown() {
+  console.log('\n📦 Step 2.5: 转换 Obsidian wiki 图片链接')
+  for (const base of KNOWLEDGE_BASES) {
+    const baseDir = resolve(DOCS_DIR, base.name)
+    if (existsSync(baseDir)) {
+      convertAllMarkdownFiles(baseDir)
+      console.log(`  ✅ 转换完成: ${base.name}`)
     }
   }
 }
@@ -276,14 +426,34 @@ ${base.description}
 }
 
 /**
+ * 清理 public/zimg 目录
+ */
+function cleanPublicZimg() {
+  const publicZimg = join(PUBLIC_DIR, 'zimg')
+  if (existsSync(publicZimg)) {
+    rmSync(publicZimg, { recursive: true, force: true })
+  }
+}
+
+/**
  * 主函数
  */
 async function main() {
   cleanAllTargetDirs()
+  cleanPublicZimg()
   console.log('✅ 清理完成')
+
+  collectAllImages()
+  console.log('✅ 图片收集完成')
 
   copyAllKnowledgeBases()
   console.log('✅ 复制完成')
+
+  copyImagesToPublic()
+  console.log('✅ 图片复制到 public 目录完成')
+
+  convertAllKnowledgeBasesMarkdown()
+  console.log('✅ Obsidian 链接转换完成')
 
   generateSidebarConfig()
   console.log('✅ 侧边栏配置生成完成')
@@ -295,7 +465,7 @@ async function main() {
   console.log('✅ 知识库首页生成完成')
 
   console.log('\n🎉 同步完成！')
-  console.log('💡 运行 pnpm dev 查看效果，或运行 pnpm build 构建')
+  console.log('💡 运行 npm run dev 查看效果，或运行 npm run build 构建')
 }
 
 main().catch(console.error)

@@ -253,6 +253,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
               "link": "/NanoGrid/A-小方格/10-功能格子/BMI计算器"
             }
           ]
+        },
+        {
+          "text": "📄 踩坑记录",
+          "link": "/NanoGrid/A-小方格/1000-踩坑记录"
         }
       ]
     },

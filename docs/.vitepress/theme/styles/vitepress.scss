@@ -135,6 +135,21 @@ table {
   display: table !important;
 }
 
+/* 引用块样式 - 绿色字体 */
+.vp-doc blockquote {
+  color: #166534;
+  border-left-color: #166534;
+  border-left-width: 4px;
+  padding-left: 12px;
+}
+
+.dark .vp-doc blockquote {
+  color: #4ade80;
+  border-left-color: #4ade80;
+  border-left-width: 4px;
+  padding-left: 12px;
+}
+
 /**
  * VitePress: Custom fix
  * -------------------------------------------------------------------------- */
