@@ -151,6 +151,37 @@ table {
 }
 
 /**
+ * 标题样式优化
+ * -------------------------------------------------------------------------- */
+
+.vp-doc h1 {
+  font-size: 28px;
+  line-height: 40px;
+}
+
+@media (min-width: 768px) {
+  .vp-doc h1 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+.vp-doc h2 {
+  font-size: 28px;
+  line-height: 36px;
+}
+
+.vp-doc h3 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.vp-doc h4 {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+/**
  * VitePress: Custom fix
  * -------------------------------------------------------------------------- */
 
