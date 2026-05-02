@@ -131,15 +131,26 @@ function copyImagesToPublic() {
 /**
  * 转换 Obsidian wiki 链接为标准 Markdown 图片链接（使用 public 目录）
  * ![[image.png]] → ![](/zimg/image.png)
+ * ![[image.png|353]] → <img src="/zimg/image.png" style="width: 353px">
  */
 function convertWikiLinks(content) {
-  // 匹配 ![[image.png]] 格式的图片链接
-  const wikiImageRegex = /!\[\[([^\]]+\.(?:png|jpg|jpeg|gif|svg|webp))\]\]/gi
+  // 匹配 ![[image.png]] 和 ![[image.png|353]] 格式的图片链接
+  const wikiImageRegex = /!\[\[([^\]|]+\.(?:png|jpg|jpeg|gif|svg|webp))(?:\|([^\]]*))?\]\]/gi
   let result = content
 
-  result = result.replace(wikiImageRegex, (match, imageName) => {
+  result = result.replace(wikiImageRegex, (match, imageName, widthInfo) => {
     if (allImages.has(imageName)) {
-      return `![](/zimg/${imageName})`
+      // 对文件名进行 URL 编码，处理空格等特殊字符
+      const encodedName = encodeURI(imageName)
+
+      // 如果有宽度信息，输出带宽度的 HTML img 标签
+      if (widthInfo && /^\d+$/.test(widthInfo.trim())) {
+        const width = widthInfo.trim()
+        return `<img src="/zimg/${encodedName}" style="width: ${width}px">`
+      }
+
+      // 否则输出标准 Markdown 图片
+      return `![](/zimg/${encodedName})`
     }
     // 找不到图片，保持原样
     return match
