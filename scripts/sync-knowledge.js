@@ -131,11 +131,10 @@ function copyImagesToPublic() {
 /**
  * 转换 Obsidian wiki 链接为标准 Markdown 图片链接（使用 public 目录）
  * ![[image.png]] → ![](/zimg/image.png)
- * ![[image.png|451]] → ![](/zimg/image.png)
  */
 function convertWikiLinks(content) {
-  // 匹配 ![[image.png]] 或 ![[image.png|451]] 格式的图片链接
-  const wikiImageRegex = /!\[\[([^\|\]]+\.(?:png|jpg|jpeg|gif|svg|webp))(?:\|[^\]]*)?\]\]/gi
+  // 匹配 ![[image.png]] 格式的图片链接
+  const wikiImageRegex = /!\[\[([^\]]+\.(?:png|jpg|jpeg|gif|svg|webp))\]\]/gi
   let result = content
 
   result = result.replace(wikiImageRegex, (match, imageName) => {
