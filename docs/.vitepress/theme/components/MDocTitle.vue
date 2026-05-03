@@ -48,7 +48,7 @@ const docTitle = computed(() => {
 @media (max-width: 768px) {
   .m-doc-title {
     font-size: 26px;
-    line-height: 36px;
+    line-height: 38px;
   }
 }
 </style>
