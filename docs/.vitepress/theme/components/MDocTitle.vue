@@ -4,6 +4,8 @@ import { useData, useRoute } from 'vitepress'
 const { frontmatter } = useData()
 const route = useRoute()
 
+const shouldShow = true
+
 // TODO: 实现标题处理逻辑
 </script>
 
