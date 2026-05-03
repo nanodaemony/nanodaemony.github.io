@@ -185,6 +185,26 @@
   padding-bottom: 4px !important;
 }
 
+/* 彻底清除右侧目录活动标题的所有背景色 - 只改变字体颜色 */
+.VPDocAsideOutline .outline-link.active,
+.VPDocAsideOutline .outline-item.active,
+.VPDocAsideOutline li.active,
+.VPDocAsideOutline .active {
+  color: var(--vp-c-brand-1) !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  padding-right: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* 完全隐藏左侧的指示条 */
+.VPDocAsideOutline .outline-marker {
+  display: none !important;
+  opacity: 0 !important;
+}
+
 /* 侧边栏分隔线 */
 .VPSidebar {
   border-right: none !important;
