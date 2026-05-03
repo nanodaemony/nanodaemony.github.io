@@ -18,14 +18,16 @@ const docTitle = computed(() => {
   const nameWithoutExt = lastSegment.replace(/\.(md|html)$/, '')
   // 替换连字符和下划线为空格
   const withSpaces = nameWithoutExt.replace(/[-_]/g, ' ')
+  // 去掉开头的数字序号（如 "11."、"11-"、"11 " 等）
+  const withoutNumber = withSpaces.replace(/^\d+[.\-\s]+/, '')
   // 检查是否包含中文字符
-  const hasChinese = /[一-龥]/.test(withSpaces)
+  const hasChinese = /[一-龥]/.test(withoutNumber)
   if (hasChinese) {
     // 中文直接返回，不做首字母大写
-    return withSpaces
+    return withoutNumber
   }
   // 英文首字母大写
-  return withSpaces.replace(/\b\w/g, (c) => c.toUpperCase())
+  return withoutNumber.replace(/\b\w/g, (c) => c.toUpperCase())
 })
 </script>
 
