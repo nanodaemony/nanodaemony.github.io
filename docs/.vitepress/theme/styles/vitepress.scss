@@ -59,6 +59,66 @@
     monospace !important;
 }
 
+/* 核心：覆盖整个页面布局的最大宽度限制 */
+.VPSidebar,
+.VPNav,
+.VPContent,
+.VPDoc,
+.VPDocFooter,
+.VPLocalNav {
+  max-width: none !important;
+}
+
+/* 覆盖 VPDoc 布局 - 这是最核心的部分 */
+.VPDoc {
+  /* 移除整体布局的最大宽度限制 */
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* 调整三栏布局的网格 */
+.VPDoc.has-sidebar.has-aside {
+  grid-template-columns: var(--vp-sidebar-width) minmax(0, 1fr) var(--vp-outline-width) !important;
+}
+
+.VPDoc.has-sidebar:not(.has-aside) {
+  grid-template-columns: var(--vp-sidebar-width) minmax(0, 1fr) !important;
+}
+
+.VPDoc:not(.has-sidebar).has-aside {
+  grid-template-columns: minmax(0, 1fr) var(--vp-outline-width) !important;
+}
+
+/* 内容区域宽度设置 */
+.VPDoc .content {
+  max-width: var(--vp-doc-max-width) !important;
+  width: 100% !important;
+}
+
+.VPDoc .content-container {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* 确保 VPContent（VitePress 的主要内容容器）没有宽度限制 */
+.VPContent {
+  max-width: none !important;
+}
+
+/* 覆盖 vp-doc（markdown 内容容器）的宽度限制 */
+.vp-doc {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* 覆盖可能在 Vue 组件内部设置的宽度限制 */
+.vp-doc > div,
+.VPDoc .doc-container > div,
+.VPDoc .content > div {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
 /* 大屏大一点 */
 @media (min-width: 1440px) {
   .VPDoc.has-aside .content-container.content-container {
