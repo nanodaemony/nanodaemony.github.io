@@ -21,7 +21,13 @@
  * -------------------------------------------------------------------------- */
 :root {
   --vp-sidebar-width: 250px;
-  --vp-outline-width: 284px;
+  --vp-outline-width: 360px;
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --vp-outline-width: 380px;
+  }
 }
 
 /**

@@ -66,6 +66,65 @@
   }
 }
 
+/* 强制修改右侧目录宽度 */
+:root {
+  --vp-outline-width: 360px !important;
+}
+
+.VPDoc.has-aside {
+  grid-template-columns: minmax(0, 1fr) 360px !important;
+}
+
+.VPDoc .aside {
+  width: 360px !important;
+  min-width: 360px !important;
+  max-width: 360px !important;
+}
+
+/* 关键：也需要设置 aside-container 和 aside-curtain 的宽度！ */
+.VPDoc .aside-container,
+.VPDoc .aside-curtain {
+  width: 328px !important;
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --vp-outline-width: 380px !important;
+  }
+
+  .VPDoc.has-aside {
+    grid-template-columns: minmax(0, 1fr) 380px !important;
+  }
+
+  .VPDoc .aside {
+    width: 380px !important;
+    min-width: 380px !important;
+    max-width: 380px !important;
+  }
+
+  .VPDoc .aside-container,
+  .VPDoc .aside-curtain {
+    width: 348px !important;
+  }
+}
+
+/* 让目录链接完整展示，放不下就换行 */
+.VPDocAsideOutline .outline-link {
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+}
+
+/* 目录 item 高度自适应 */
+.VPDocAsideOutline .outline-item {
+  height: auto !important;
+  line-height: 1.4 !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+
 /* 侧边栏分隔线 */
 .VPSidebar {
   border-right: none !important;
