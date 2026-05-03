@@ -12,13 +12,19 @@ const shouldShow = computed(() => {
 
 const docTitle = computed(() => {
   const path = route.path
-  // 获取路径最后一段
-  const lastSegment = path.split('/').filter(Boolean).pop() || ''
+  // 获取路径最后一段并解码
+  const lastSegment = decodeURIComponent(path.split('/').filter(Boolean).pop() || '')
   // 去掉扩展名
   const nameWithoutExt = lastSegment.replace(/\.(md|html)$/, '')
   // 替换连字符和下划线为空格
   const withSpaces = nameWithoutExt.replace(/[-_]/g, ' ')
-  // 首字母大写
+  // 检查是否包含中文字符
+  const hasChinese = /[一-龥]/.test(withSpaces)
+  if (hasChinese) {
+    // 中文直接返回，不做首字母大写
+    return withSpaces
+  }
+  // 英文首字母大写
   return withSpaces.replace(/\b\w/g, (c) => c.toUpperCase())
 })
 </script>
