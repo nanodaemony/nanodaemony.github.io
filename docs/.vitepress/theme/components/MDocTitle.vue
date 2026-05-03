@@ -30,5 +30,19 @@ const docTitle = computed(() => {
 </template>
 
 <style scoped>
-/* TODO: 添加样式 */
+.m-doc-title {
+  font-size: 34px;
+  line-height: 42px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--vp-c-text-1);
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .m-doc-title {
+    font-size: 26px;
+    line-height: 36px;
+  }
+}
 </style>
