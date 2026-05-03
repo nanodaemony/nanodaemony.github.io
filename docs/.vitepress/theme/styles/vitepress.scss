@@ -220,19 +220,19 @@
 
 /* 内容区卡片效果 */
 .VPDoc .content-container {
-  background-color: #fafafa;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
   padding: 32px 40px;
   margin: 24px 0;
 }
 
 /* 暗黑模式卡片效果 */
 .dark .VPDoc .content-container {
-  background-color: #1e1e1e;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
 }
 
 /* 内容区内标题样式调整 */

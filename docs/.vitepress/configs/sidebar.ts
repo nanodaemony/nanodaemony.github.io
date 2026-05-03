@@ -95,6 +95,10 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
           "collapsed": true,
           "items": [
             {
+              "text": "📄 数组题目",
+              "link": "/NanoMind/H-算法/2-算法题目/1.数组题目"
+            },
+            {
               "text": "📄 Codetop高频算法",
               "link": "/NanoMind/H-算法/2-算法题目/Codetop高频算法"
             }
