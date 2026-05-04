@@ -113,19 +113,28 @@ function collectImages(srcDir, baseName) {
 }
 
 /**
- * 复制所有收集到的图片到 public 目录
+ * 转换带尺寸信息的外部图片链接
+ * ![|700](url) → <img src="url" style="width: 700px">
+ * ![|700|797x475](url) → <img src="url" style="width: 700px">
  */
-function copyImagesToPublic() {
-  const publicZimg = join(PUBLIC_DIR, 'zimg')
-  mkdirSync(publicZimg, { recursive: true })
+function convertExternalImageLinks(content) {
+  // 匹配所有外部图片格式
+  const externalImageRegex =
+    /!\[([^\]]*)\]\((https?:\/\/[^\)]+\.(?:png|jpg|jpeg|gif|svg|webp)[^\)]*)\)/gi
+  let result = content
 
-  let count = 0
-  for (const [imgName, srcPath] of allImages) {
-    const destPath = join(publicZimg, imgName)
-    cpSync(srcPath, destPath, { force: true })
-    count++
-  }
-  console.log(`  📷 复制了 ${count} 张图片到 public/zimg/`)
+  result = result.replace(externalImageRegex, (match, sizePart, url) => {
+    // 提取宽度信息，支持 |700 或 |703x396 或 |700|797x475 格式
+    const widthMatch = sizePart.match(/\|(\d+)(?:x\d+)?(?:\|\d+x\d+)?/)
+    if (widthMatch) {
+      const width = widthMatch[1]
+      return `<img src="${url}" style="width: ${width}px">`
+    }
+    // 如果没有有效的宽度信息，保持原样
+    return match
+  })
+
+  return result
 }
 
 /**
@@ -188,7 +197,7 @@ function copyDir(src, dest) {
 }
 
 /**
- * 递归转换目录中所有 Markdown 文件的 wiki 链接
+ * 递归转换目录中所有 Markdown 文件的 wiki 链接和外部图片链接
  */
 function convertAllMarkdownFiles(dir) {
   const entries = readdirSync(dir, { withFileTypes: true })
@@ -202,7 +211,9 @@ function convertAllMarkdownFiles(dir) {
       }
     } else if (entry.name.endsWith('.md')) {
       const content = readFileSync(fullPath, 'utf-8')
-      const convertedContent = convertWikiLinks(content)
+      // 先转换外部图片链接，再转换 wiki 链接
+      let convertedContent = convertExternalImageLinks(content)
+      convertedContent = convertWikiLinks(convertedContent)
       if (content !== convertedContent) {
         writeFileSync(fullPath, convertedContent, 'utf-8')
       }
@@ -444,6 +455,22 @@ function cleanPublicZimg() {
   if (existsSync(publicZimg)) {
     rmSync(publicZimg, { recursive: true, force: true })
   }
+}
+
+/**
+ * 复制所有收集到的图片到 public 目录
+ */
+function copyImagesToPublic() {
+  const publicZimg = join(PUBLIC_DIR, 'zimg')
+  mkdirSync(publicZimg, { recursive: true })
+
+  let count = 0
+  for (const [imgName, srcPath] of allImages) {
+    const destPath = join(publicZimg, imgName)
+    cpSync(srcPath, destPath, { force: true })
+    count++
+  }
+  console.log(`  📷 复制了 ${count} 张图片到 public/zimg/`)
 }
 
 /**

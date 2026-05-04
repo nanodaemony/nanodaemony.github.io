@@ -11,7 +11,8 @@
     "prepare": "husky install",
     "format": "prettier --write .",
     "sync": "node scripts/sync-knowledge.js",
-    "sync:dev": "node scripts/sync-knowledge.js && pnpm dev"
+    "sync:dev": "node scripts/sync-knowledge.js && pnpm dev",
+    "download-yuque": "node scripts/download-yuque-img.js"
   },
   "repository": {
     "type": "git",

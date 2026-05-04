@@ -87,20 +87,386 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       ]
     },
     {
+      "text": "基础",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "📁 计算机基础",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  密码学",
+              "link": "/NanoMind/D-基础/1-计算机基础/1. 密码学"
+            }
+          ]
+        },
+        {
+          "text": "📁 操作系统",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  操作系统基础",
+              "link": "/NanoMind/D-基础/2-操作系统/1. 操作系统基础"
+            },
+            {
+              "text": "📄  进程管理",
+              "link": "/NanoMind/D-基础/2-操作系统/2. 进程管理"
+            },
+            {
+              "text": "📄  内存管理",
+              "link": "/NanoMind/D-基础/2-操作系统/3. 内存管理"
+            },
+            {
+              "text": "📄  IO操作管理",
+              "link": "/NanoMind/D-基础/2-操作系统/4. IO操作管理"
+            },
+            {
+              "text": "📄  Linux系统管理",
+              "link": "/NanoMind/D-基础/2-操作系统/5. Linux系统管理"
+            },
+            {
+              "text": "📄  Shell编程基础",
+              "link": "/NanoMind/D-基础/2-操作系统/6. Shell编程基础"
+            },
+            {
+              "text": "📄  Shell常见命令",
+              "link": "/NanoMind/D-基础/2-操作系统/7. Shell常见命令"
+            }
+          ]
+        },
+        {
+          "text": "📁 网络",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  网络基础",
+              "link": "/NanoMind/D-基础/3-网络/1. 网络基础"
+            },
+            {
+              "text": "📄  数据链路层",
+              "link": "/NanoMind/D-基础/3-网络/2. 数据链路层"
+            },
+            {
+              "text": "📄  网络层",
+              "link": "/NanoMind/D-基础/3-网络/3. 网络层"
+            },
+            {
+              "text": "📄  传输层",
+              "link": "/NanoMind/D-基础/3-网络/4. 传输层"
+            },
+            {
+              "text": "📄  应用层",
+              "link": "/NanoMind/D-基础/3-网络/5. 应用层"
+            },
+            {
+              "text": "📄  HTTP",
+              "link": "/NanoMind/D-基础/3-网络/6. HTTP"
+            },
+            {
+              "text": "📄  网络安全",
+              "link": "/NanoMind/D-基础/3-网络/7. 网络安全"
+            },
+            {
+              "text": "📄  综合问题",
+              "link": "/NanoMind/D-基础/3-网络/8. 综合问题"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "Java",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "📁 基础",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  Java基础",
+              "link": "/NanoMind/E-Java/1-基础/1. Java基础"
+            },
+            {
+              "text": "📄  类与继承",
+              "link": "/NanoMind/E-Java/1-基础/2. 类与继承"
+            },
+            {
+              "text": "📄  抽象类与接口",
+              "link": "/NanoMind/E-Java/1-基础/3. 抽象类与接口"
+            },
+            {
+              "text": "📄  内部类",
+              "link": "/NanoMind/E-Java/1-基础/4. 内部类"
+            },
+            {
+              "text": "📄  枚举类",
+              "link": "/NanoMind/E-Java/1-基础/5. 枚举类"
+            },
+            {
+              "text": "📄  常用类",
+              "link": "/NanoMind/E-Java/1-基础/6. 常用类"
+            },
+            {
+              "text": "📄  关键字",
+              "link": "/NanoMind/E-Java/1-基础/7. 关键字"
+            },
+            {
+              "text": "📄  注解",
+              "link": "/NanoMind/E-Java/1-基础/8. 注解"
+            },
+            {
+              "text": "📄  异常",
+              "link": "/NanoMind/E-Java/1-基础/9. 异常"
+            },
+            {
+              "text": "📄  泛型",
+              "link": "/NanoMind/E-Java/1-基础/10. 泛型"
+            }
+          ]
+        },
+        {
+          "text": "📁 容器类",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  容器集合类",
+              "link": "/NanoMind/E-Java/2-容器类/1. 容器集合类"
+            },
+            {
+              "text": "📄  List与Queue类",
+              "link": "/NanoMind/E-Java/2-容器类/2. List与Queue类"
+            },
+            {
+              "text": "📄  Map与Set类",
+              "link": "/NanoMind/E-Java/2-容器类/3. Map与Set类"
+            },
+            {
+              "text": "📄  并发容器类",
+              "link": "/NanoMind/E-Java/2-容器类/4. 并发容器类"
+            }
+          ]
+        },
+        {
+          "text": "📁 并发",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  多线程基础",
+              "link": "/NanoMind/E-Java/3-并发/1. 多线程基础"
+            },
+            {
+              "text": "📄  Java内置锁",
+              "link": "/NanoMind/E-Java/3-并发/2. Java内置锁"
+            },
+            {
+              "text": "📄  AQS",
+              "link": "/NanoMind/E-Java/3-并发/3. AQS"
+            },
+            {
+              "text": "📄  显式锁ReentrantLock",
+              "link": "/NanoMind/E-Java/3-并发/4. 显式锁ReentrantLock"
+            },
+            {
+              "text": "📄  线程协作与JUC组件",
+              "link": "/NanoMind/E-Java/3-并发/5. 线程协作与JUC组件"
+            },
+            {
+              "text": "📄  Atomic原子变量与Unsafe类与CAS",
+              "link": "/NanoMind/E-Java/3-并发/6. Atomic原子变量与Unsafe类与CAS"
+            },
+            {
+              "text": "📄  线程池与定时任务",
+              "link": "/NanoMind/E-Java/3-并发/7. 线程池与定时任务"
+            },
+            {
+              "text": "📄  ThreadLocal",
+              "link": "/NanoMind/E-Java/3-并发/8. ThreadLocal"
+            }
+          ]
+        },
+        {
+          "text": "📁 高级特性",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  IO操作",
+              "link": "/NanoMind/E-Java/4-高级特性/1. IO操作"
+            },
+            {
+              "text": "📄  Java网络IO",
+              "link": "/NanoMind/E-Java/4-高级特性/2. Java网络IO"
+            },
+            {
+              "text": "📄  Lambda表达式",
+              "link": "/NanoMind/E-Java/4-高级特性/3. Lambda表达式"
+            },
+            {
+              "text": "📄  流Stream",
+              "link": "/NanoMind/E-Java/4-高级特性/4. 流Stream"
+            },
+            {
+              "text": "📄  反射",
+              "link": "/NanoMind/E-Java/4-高级特性/5. 反射"
+            },
+            {
+              "text": "📄  代理",
+              "link": "/NanoMind/E-Java/4-高级特性/6. 代理"
+            },
+            {
+              "text": "📄  SPI",
+              "link": "/NanoMind/E-Java/4-高级特性/7. SPI"
+            }
+          ]
+        },
+        {
+          "text": "📁 JVM",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  走进JVM",
+              "link": "/NanoMind/E-Java/5-JVM/1. 走进JVM"
+            },
+            {
+              "text": "📄  JVM内存区域与对象解析",
+              "link": "/NanoMind/E-Java/5-JVM/2. JVM内存区域与对象解析"
+            },
+            {
+              "text": "📄  垃圾收集器与内存分配策略",
+              "link": "/NanoMind/E-Java/5-JVM/3. 垃圾收集器与内存分配策略"
+            },
+            {
+              "text": "📄  JVM性能监控与故障处理工具",
+              "link": "/NanoMind/E-Java/5-JVM/4. JVM性能监控与故障处理工具"
+            },
+            {
+              "text": "📄  调优案例分析与实战",
+              "link": "/NanoMind/E-Java/5-JVM/5. 调优案例分析与实战"
+            },
+            {
+              "text": "📄  类文件结构",
+              "link": "/NanoMind/E-Java/5-JVM/6. 类文件结构"
+            },
+            {
+              "text": "📄  虚拟机类加载机制",
+              "link": "/NanoMind/E-Java/5-JVM/7. 虚拟机类加载机制"
+            },
+            {
+              "text": "📄  虚拟机字节码执行引擎",
+              "link": "/NanoMind/E-Java/5-JVM/8. 虚拟机字节码执行引擎"
+            },
+            {
+              "text": "📄  类加载及执行子系统的案例与实战",
+              "link": "/NanoMind/E-Java/5-JVM/9. 类加载及执行子系统的案例与实战"
+            },
+            {
+              "text": "📄  前端编译与优化",
+              "link": "/NanoMind/E-Java/5-JVM/10. 前端编译与优化"
+            },
+            {
+              "text": "📄  后端编译与优化",
+              "link": "/NanoMind/E-Java/5-JVM/11. 后端编译与优化"
+            },
+            {
+              "text": "📄  Java内存模型与线程实现",
+              "link": "/NanoMind/E-Java/5-JVM/12. Java内存模型与线程实现"
+            },
+            {
+              "text": "📄  线程安全与内置锁优化",
+              "link": "/NanoMind/E-Java/5-JVM/13. 线程安全与内置锁优化"
+            },
+            {
+              "text": "📄  综合问题",
+              "link": "/NanoMind/E-Java/5-JVM/20. 综合问题"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "text": "算法",
       "collapsed": false,
       "items": [
+        {
+          "text": "📁 数据结构",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄 数据结构",
+              "link": "/NanoMind/H-算法/1-数据结构/1.数据结构"
+            }
+          ]
+        },
         {
           "text": "📁 算法题目",
           "collapsed": true,
           "items": [
             {
+              "text": "📄 Codetop高频算法",
+              "link": "/NanoMind/H-算法/2-算法题目/0.Codetop高频算法"
+            },
+            {
               "text": "📄 数组题目",
               "link": "/NanoMind/H-算法/2-算法题目/1.数组题目"
             },
             {
-              "text": "📄 Codetop高频算法",
-              "link": "/NanoMind/H-算法/2-算法题目/Codetop高频算法"
+              "text": "📄 哈希表题目",
+              "link": "/NanoMind/H-算法/2-算法题目/2.哈希表题目"
+            },
+            {
+              "text": "📄 元素查找题目",
+              "link": "/NanoMind/H-算法/2-算法题目/3.元素查找题目"
+            },
+            {
+              "text": "📄 双指针题目",
+              "link": "/NanoMind/H-算法/2-算法题目/4.双指针题目"
+            },
+            {
+              "text": "📄 排序题目",
+              "link": "/NanoMind/H-算法/2-算法题目/5.排序题目"
+            },
+            {
+              "text": "📄 字符串题目",
+              "link": "/NanoMind/H-算法/2-算法题目/6.字符串题目"
+            },
+            {
+              "text": "📄 链表题目",
+              "link": "/NanoMind/H-算法/2-算法题目/7.链表题目"
+            },
+            {
+              "text": "📄 队列与栈题目",
+              "link": "/NanoMind/H-算法/2-算法题目/8.队列与栈题目"
+            },
+            {
+              "text": "📄 树题目",
+              "link": "/NanoMind/H-算法/2-算法题目/9.树题目"
+            },
+            {
+              "text": "📄 贪心算法题目",
+              "link": "/NanoMind/H-算法/2-算法题目/10.贪心算法题目"
+            },
+            {
+              "text": "📄 动态规划题目",
+              "link": "/NanoMind/H-算法/2-算法题目/11.动态规划题目"
+            },
+            {
+              "text": "📄 回溯算法题目",
+              "link": "/NanoMind/H-算法/2-算法题目/12.回溯算法题目"
+            },
+            {
+              "text": "📄 图与搜索题目",
+              "link": "/NanoMind/H-算法/2-算法题目/13.图与搜索题目"
+            },
+            {
+              "text": "📄 数学与位运算题目",
+              "link": "/NanoMind/H-算法/2-算法题目/14.数学与位运算题目"
+            },
+            {
+              "text": "📄 大数据与空间限制题目",
+              "link": "/NanoMind/H-算法/2-算法题目/15.大数据与空间限制题目"
+            },
+            {
+              "text": "📄 业务代码题目",
+              "link": "/NanoMind/H-算法/2-算法题目/16.业务代码题目"
             }
           ]
         }

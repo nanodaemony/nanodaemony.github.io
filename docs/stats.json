@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-05-03",
-  "totalDocs": 79,
+  "lastUpdated": "2026-05-04",
+  "totalDocs": 154,
   "bases": [
     {
       "name": "NanoMind",
       "title": "技术",
       "description": "技术知识、工作总结、学习笔记",
-      "docCount": 14
+      "docCount": 89
     },
     {
       "name": "NanoGrid",
