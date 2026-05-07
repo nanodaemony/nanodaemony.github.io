@@ -383,6 +383,364 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
       ]
     },
     {
+      "text": "设计与开发",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "📁 软件设计",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  软件设计基础理论",
+              "link": "/NanoMind/F-设计与开发/1-软件设计/1. 软件设计基础理论"
+            },
+            {
+              "text": "📄  设计模式",
+              "link": "/NanoMind/F-设计与开发/1-软件设计/2. 设计模式"
+            },
+            {
+              "text": "📄  DDD",
+              "link": "/NanoMind/F-设计与开发/1-软件设计/3. DDD"
+            }
+          ]
+        },
+        {
+          "text": "📁 数据库",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  数据库系统原理",
+              "link": "/NanoMind/F-设计与开发/2-数据库/1. 数据库系统原理"
+            },
+            {
+              "text": "📄  MySQL基础必知必会",
+              "link": "/NanoMind/F-设计与开发/2-数据库/2. MySQL基础必知必会"
+            },
+            {
+              "text": "📄  数据库LeetCode题目",
+              "link": "/NanoMind/F-设计与开发/2-数据库/3. 数据库LeetCode题目"
+            },
+            {
+              "text": "📄  MySQL索引",
+              "link": "/NanoMind/F-设计与开发/2-数据库/10. MySQL索引"
+            },
+            {
+              "text": "📄  MySQL锁",
+              "link": "/NanoMind/F-设计与开发/2-数据库/11. MySQL锁"
+            },
+            {
+              "text": "📄  MySQL事务",
+              "link": "/NanoMind/F-设计与开发/2-数据库/12. MySQL事务"
+            },
+            {
+              "text": "📄  MySQL高级特性",
+              "link": "/NanoMind/F-设计与开发/2-数据库/13. MySQL高级特性"
+            },
+            {
+              "text": "📄  MySQL基础架构与存储引擎",
+              "link": "/NanoMind/F-设计与开发/2-数据库/14. MySQL基础架构与存储引擎"
+            },
+            {
+              "text": "📄  MySQL优化",
+              "link": "/NanoMind/F-设计与开发/2-数据库/20. MySQL优化"
+            },
+            {
+              "text": "📄  MySQL架构",
+              "link": "/NanoMind/F-设计与开发/2-数据库/21. MySQL架构"
+            },
+            {
+              "text": "📄  MySQL运维",
+              "link": "/NanoMind/F-设计与开发/2-数据库/22. MySQL运维"
+            },
+            {
+              "text": "📄  MySQL设计规范",
+              "link": "/NanoMind/F-设计与开发/2-数据库/23. MySQL设计规范"
+            },
+            {
+              "text": "📄  数据库综合问题",
+              "link": "/NanoMind/F-设计与开发/2-数据库/100. 数据库综合问题"
+            }
+          ]
+        },
+        {
+          "text": "📁 Spring",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  Spring Boot基础",
+              "link": "/NanoMind/F-设计与开发/3-Spring/1. Spring Boot基础"
+            },
+            {
+              "text": "📄  Spring Boot应用",
+              "link": "/NanoMind/F-设计与开发/3-Spring/2. Spring Boot应用"
+            },
+            {
+              "text": "📄  Spring MVC基础",
+              "link": "/NanoMind/F-设计与开发/3-Spring/3. Spring MVC基础"
+            },
+            {
+              "text": "📄  Spring AOP基础",
+              "link": "/NanoMind/F-设计与开发/3-Spring/4. Spring AOP基础"
+            },
+            {
+              "text": "📄  Spring事务基础",
+              "link": "/NanoMind/F-设计与开发/3-Spring/5. Spring事务基础"
+            },
+            {
+              "text": "📄  Spring IOC源码分析",
+              "link": "/NanoMind/F-设计与开发/3-Spring/100. Spring IOC源码分析"
+            },
+            {
+              "text": "📄  Spring AOP源码分析",
+              "link": "/NanoMind/F-设计与开发/3-Spring/101. Spring AOP源码分析"
+            },
+            {
+              "text": "📄  Spring事务源码分析",
+              "link": "/NanoMind/F-设计与开发/3-Spring/102. Spring事务源码分析"
+            },
+            {
+              "text": "📄  Spring Boot源码分析",
+              "link": "/NanoMind/F-设计与开发/3-Spring/103. Spring Boot源码分析"
+            },
+            {
+              "text": "📄  Spring MVC源码分析",
+              "link": "/NanoMind/F-设计与开发/3-Spring/104. Spring MVC源码分析"
+            },
+            {
+              "text": "📄  Spring Cloud总结",
+              "link": "/NanoMind/F-设计与开发/3-Spring/200. Spring Cloud总结"
+            }
+          ]
+        },
+        {
+          "text": "📁 工具与环境",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  Arthas",
+              "link": "/NanoMind/F-设计与开发/4-工具与环境/1. Arthas"
+            },
+            {
+              "text": "📄  Maven",
+              "link": "/NanoMind/F-设计与开发/4-工具与环境/2. Maven"
+            },
+            {
+              "text": "📄  Git",
+              "link": "/NanoMind/F-设计与开发/4-工具与环境/3. Git"
+            },
+            {
+              "text": "📄  MyBatis",
+              "link": "/NanoMind/F-设计与开发/4-工具与环境/4. MyBatis"
+            },
+            {
+              "text": "📄  环境搭建与部署",
+              "link": "/NanoMind/F-设计与开发/4-工具与环境/5. 环境搭建与部署"
+            }
+          ]
+        },
+        {
+          "text": "📁 测试",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  单元测试",
+              "link": "/NanoMind/F-设计与开发/5-测试/1. 单元测试"
+            }
+          ]
+        },
+        {
+          "text": "📁 代码质量",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  代码整洁之道",
+              "link": "/NanoMind/F-设计与开发/6-代码质量/1. 代码整洁之道"
+            },
+            {
+              "text": "📄  阿里巴巴编程规范",
+              "link": "/NanoMind/F-设计与开发/6-代码质量/2. 阿里巴巴编程规范"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "系统",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "📁 分布式系统基础",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  分布式系统基础",
+              "link": "/NanoMind/G-系统/1-分布式系统基础/1. 分布式系统基础"
+            },
+            {
+              "text": "📄  分布式共识算法",
+              "link": "/NanoMind/G-系统/1-分布式系统基础/2. 分布式共识算法"
+            },
+            {
+              "text": "📄  分布式事务",
+              "link": "/NanoMind/G-系统/1-分布式系统基础/3. 分布式事务"
+            },
+            {
+              "text": "📄  分布式系统组件",
+              "link": "/NanoMind/G-系统/1-分布式系统基础/4. 分布式系统组件"
+            }
+          ]
+        },
+        {
+          "text": "📁 系统接入",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  Tomcat",
+              "link": "/NanoMind/G-系统/2-系统接入/1. Tomcat"
+            },
+            {
+              "text": "📄  Nginx",
+              "link": "/NanoMind/G-系统/2-系统接入/2. Nginx"
+            },
+            {
+              "text": "📄  Netty",
+              "link": "/NanoMind/G-系统/2-系统接入/3. Netty"
+            }
+          ]
+        },
+        {
+          "text": "📁 服务治理-流量控制",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  负载均衡",
+              "link": "/NanoMind/G-系统/3-服务治理-流量控制/1. 负载均衡"
+            },
+            {
+              "text": "📄  流量控制",
+              "link": "/NanoMind/G-系统/3-服务治理-流量控制/2. 流量控制"
+            },
+            {
+              "text": "📄  服务网关与路由",
+              "link": "/NanoMind/G-系统/3-服务治理-流量控制/3. 服务网关与路由"
+            }
+          ]
+        },
+        {
+          "text": "📁 服务治理-系统安全与监控",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  系统安全性",
+              "link": "/NanoMind/G-系统/4-服务治理-系统安全与监控/1. 系统安全性"
+            }
+          ]
+        },
+        {
+          "text": "📁 分布式存储",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  分布式存储",
+              "link": "/NanoMind/G-系统/5-分布式存储/1. 分布式存储"
+            }
+          ]
+        },
+        {
+          "text": "📁 中间件之消息队列",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  基础",
+              "link": "/NanoMind/G-系统/6-中间件之消息队列/1. 基础"
+            },
+            {
+              "text": "📄  RocketMQ",
+              "link": "/NanoMind/G-系统/6-中间件之消息队列/2. RocketMQ"
+            },
+            {
+              "text": "📄  Kafka",
+              "link": "/NanoMind/G-系统/6-中间件之消息队列/3. Kafka"
+            },
+            {
+              "text": "📄  消息队列综合问题",
+              "link": "/NanoMind/G-系统/6-中间件之消息队列/4. 消息队列综合问题"
+            }
+          ]
+        },
+        {
+          "text": "📁 中间件之缓存",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  缓存设计",
+              "link": "/NanoMind/G-系统/7-中间件之缓存/1. 缓存设计"
+            },
+            {
+              "text": "📄  缓存基础",
+              "link": "/NanoMind/G-系统/7-中间件之缓存/2. 缓存基础"
+            },
+            {
+              "text": "📄  Redis持久化",
+              "link": "/NanoMind/G-系统/7-中间件之缓存/3. Redis持久化"
+            },
+            {
+              "text": "📄  Redis主从复制",
+              "link": "/NanoMind/G-系统/7-中间件之缓存/4. Redis主从复制"
+            },
+            {
+              "text": "📄  Redis哨兵",
+              "link": "/NanoMind/G-系统/7-中间件之缓存/5. Redis哨兵"
+            },
+            {
+              "text": "📄  Redis集群",
+              "link": "/NanoMind/G-系统/7-中间件之缓存/6. Redis集群"
+            },
+            {
+              "text": "📄  Redis内存与运维",
+              "link": "/NanoMind/G-系统/7-中间件之缓存/7. Redis内存与运维"
+            },
+            {
+              "text": "📄  缓存综合问题",
+              "link": "/NanoMind/G-系统/7-中间件之缓存/8. 缓存综合问题"
+            }
+          ]
+        },
+        {
+          "text": "📁 中间件之其他",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  Zookeeper",
+              "link": "/NanoMind/G-系统/8-中间件之其他/1. Zookeeper"
+            },
+            {
+              "text": "📄  RPC",
+              "link": "/NanoMind/G-系统/8-中间件之其他/2. RPC"
+            },
+            {
+              "text": "📄  ElasticSearch",
+              "link": "/NanoMind/G-系统/8-中间件之其他/3. ElasticSearch"
+            },
+            {
+              "text": "📄  任务调度",
+              "link": "/NanoMind/G-系统/8-中间件之其他/4. 任务调度"
+            }
+          ]
+        },
+        {
+          "text": "📁 系统设计与优化",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  系统设计与服务治理",
+              "link": "/NanoMind/G-系统/9-系统设计与优化/1. 系统设计与服务治理"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "text": "算法",
       "collapsed": false,
       "items": [
@@ -469,6 +827,84 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
               "link": "/NanoMind/H-算法/2-算法题目/16.业务代码题目"
             }
           ]
+        }
+      ]
+    },
+    {
+      "text": "容器",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "📁 基础",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄  云原生",
+              "link": "/NanoMind/I-容器/1-基础/1. 云原生"
+            },
+            {
+              "text": "📄  部署Minikube",
+              "link": "/NanoMind/I-容器/1-基础/2. 部署Minikube"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "文章",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "📁 软实力",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄 38件程序员应该知道的事",
+              "link": "/NanoMind/K-文章/软实力/38件程序员应该知道的事"
+            },
+            {
+              "text": "📄 一文梳理Code Review方法论与实践总结",
+              "link": "/NanoMind/K-文章/软实力/一文梳理Code Review方法论与实践总结"
+            }
+          ]
+        },
+        {
+          "text": "📁 设计与开发",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄 一文搞懂第三方支付系统架构设计",
+              "link": "/NanoMind/K-文章/设计与开发/一文搞懂第三方支付系统架构设计"
+            }
+          ]
+        },
+        {
+          "text": "📁 AIGC",
+          "collapsed": true,
+          "items": [
+            {
+              "text": "📄 一文带你 \"看见\" MCP 的过程，彻底理解 MCP 的概念",
+              "link": "/NanoMind/K-文章/AIGC/一文带你 \"看见\" MCP 的过程，彻底理解 MCP 的概念"
+            },
+            {
+              "text": "📄 AI大模型原理串讲",
+              "link": "/NanoMind/K-文章/AIGC/AI大模型原理串讲"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "待看",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "📄 《图解大模型：生成式AI原理与实战》",
+          "link": "/NanoMind/O-待看/《图解大模型：生成式AI原理与实战》"
+        },
+        {
+          "text": "📄 值得一读文章集合",
+          "link": "/NanoMind/O-待看/值得一读文章集合"
         }
       ]
     }
@@ -627,6 +1063,24 @@ export const sidebar: DefaultTheme.Config['sidebar'] = {
         {
           "text": "📄 踩坑记录",
           "link": "/NanoGrid/A-小方格/1000-踩坑记录"
+        }
+      ]
+    },
+    {
+      "text": "汉语桥",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "📄 词汇demo",
+          "link": "/NanoGrid/B-汉语桥/词汇demo"
+        },
+        {
+          "text": "📄 问题",
+          "link": "/NanoGrid/B-汉语桥/问题"
+        },
+        {
+          "text": "📄 资料",
+          "link": "/NanoGrid/B-汉语桥/资料"
         }
       ]
     },
